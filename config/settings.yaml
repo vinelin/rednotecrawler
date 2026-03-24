@@ -1,0 +1,52 @@
+# ===== 小红书达人爬虫 - 全局配置文件 =====
+
+# ----- 登录凭证 -----
+# 从浏览器 DevTools -> Application -> Cookies 中复制完整 Cookie
+# 必填项，没有 Cookie 无法访问小红书 API
+cookie: "abRequestId=749f9109-f328-56a8-aa48-76ecf43f804c; xsecappid=xhs-pc-web; a1=19b699558829b5r5gmz46aatskxrjf2i2nre4c4kc50000446378; webId=b7171a2217cd44c6a66721e003e09565; gid=yjDKjj2YKfJdyjDKjj22YIS4YJjD2F2k6u4KFTS009MTCd28FViJ3488844KqWY82K8j0SJ8; webBuild=6.1.3; loadts=1774345757867; websectiga=2a3d3ea002e7d92b5c9743590ebd24010cf3710ff3af8029153751e41a6af4a3; sec_poison_id=0040e9fe-f874-4a7e-ae8a-9954d301e279; unread={%22ub%22:%2269c1e30f000000001a024214%22%2C%22ue%22:%2269baa6e800000000230076bf%22%2C%22uc%22:60}"
+
+# ----- 搜索配置 -----
+# 搜索关键词列表，爬虫会依次搜索每个关键词
+keywords:
+  - "亚文化"
+  - "Y2K"
+
+# 目标领域名称（用于评估时的领域匹配）
+target_domain: "亚文化"
+
+# 每次采集的达人数量上限
+limit: 50
+
+# 每位达人采集的最近笔记数量
+notes_per_user: 20
+
+# ----- 反爬配置 -----
+# 请求间隔范围（秒），随机取值，无代理需偏保守
+delay_min: 5
+delay_max: 12
+
+# 检测到风控时的暂停时长（秒）
+block_pause: 60
+
+# 最大重试次数
+max_retries: 3
+
+# ----- 浏览器配置 -----
+# 是否使用无头模式（true: 不显示浏览器窗口, false: 显示）
+headless: true
+
+# 浏览器视口宽度
+viewport_width: 1920
+
+# 浏览器视口高度
+viewport_height: 1080
+
+# ----- 输出配置 -----
+# 数据库文件路径
+db_path: "data/db/xiaohongshu.db"
+
+# 图片保存目录
+images_dir: "data/images"
+
+# Excel 导出目录
+export_dir: "data/exports"
